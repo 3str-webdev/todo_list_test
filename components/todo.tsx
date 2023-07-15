@@ -3,12 +3,13 @@ import { FilterFunctions, useFilterTodos } from "@/shared/hooks/use-filter";
 import { TodoModel } from "@/shared/types";
 import { toggleTheme } from "@/store/slices/theme-slice";
 import { deleteTodo, toggleCompletedTodo } from "@/store/slices/todos-slice";
-import { UIButton, UISelectGroup } from "@/ui";
+import { UIButton, UIIconButton, UISelectGroup } from "@/ui";
 import { UISelectOptionModel } from "@/ui/types";
 import styled from "styled-components";
 import { AddTodoForm } from "./add-todo-form";
 import { TodoItem } from "./todo-item";
 import { TodoLayout } from "./todo-layout";
+import { MoonIcon, SunIcon } from "@/ui/icons";
 
 const TodoListSt = styled.ul`
   display: flex;
@@ -19,12 +20,8 @@ const TodoListSt = styled.ul`
 
 export const Todo = () => {
   const dispatch = useAppDispatch();
-  const themeAlias = useAppSelector((store) => store.themeReducer.alias);
   const { filteredTodos, changeIsShowTodoFunction } = useFilterTodos();
 
-  const getThemeButtonContent = () => {
-    return themeAlias === "dark" ? "Light" : "Dark";
-  };
   const getItemSubtitle = (isCompleted: boolean) => {
     return isCompleted ? "completed" : undefined;
   };
@@ -32,9 +29,6 @@ export const Todo = () => {
     return isCompleted ? "Uncompleted" : "Completed";
   };
 
-  const handleToggleThemeClick = () => {
-    dispatch(toggleTheme());
-  };
   const handleToggleCompletedClick = (id: TodoModel["id"]) => {
     dispatch(toggleCompletedTodo(id));
   };
@@ -70,11 +64,6 @@ export const Todo = () => {
           options={getFilterOptions()}
           onChange={handleChangeFilter}
         />
-      }
-      toggleTheme={
-        <UIButton onClick={handleToggleThemeClick}>
-          {getThemeButtonContent()}
-        </UIButton>
       }
       itemsList={
         <TodoListSt>

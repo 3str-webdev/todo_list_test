@@ -18,23 +18,18 @@ const ActionsSt = styled.div`
 interface TodoLayoutProps {
   addTodoField: ReactNode;
   filters: ReactNode;
-  toggleTheme: ReactNode;
   itemsList: ReactNode;
 }
 
 export const TodoLayout = ({
   addTodoField,
   filters,
-  toggleTheme,
   itemsList,
 }: TodoLayoutProps) => {
   return (
     <TodoLayoutSt>
       {addTodoField}
-      <ActionsSt>
-        {filters}
-        {toggleTheme}
-      </ActionsSt>
+      {filters}
       <hr />
       {itemsList}
     </TodoLayoutSt>
