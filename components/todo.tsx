@@ -21,8 +21,7 @@ const TodoListSt = styled.ul`
 export const Todo = () => {
   const dispatch = useAppDispatch();
   const themeAlias = useAppSelector((store) => store.themeReducer.alias);
-  const todos = useAppSelector((store) => store.todosReducer.todos);
-  const { isShowTodo, changeIsShowTodoFunction } = useFilterTodos();
+  const { filteredTodos, changeIsShowTodoFunction } = useFilterTodos();
 
   const getThemeButtonContent = () => {
     return themeAlias === "dark" ? "Light" : "Dark";
@@ -80,9 +79,7 @@ export const Todo = () => {
       }
       itemsList={
         <TodoListSt>
-          {todos.map((todo) => {
-            if (!isShowTodo(todo)) return null;
-
+          {filteredTodos.map((todo) => {
             return (
               <li key={todo.id}>
                 <TodoItem
