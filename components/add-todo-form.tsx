@@ -7,9 +7,9 @@ import { UIButton, UITextField } from "@/ui";
 import { FormEvent, useState } from "react";
 import styled from "styled-components";
 
-const AddTodoFormWrapperSt = styled.div`
+const AddTodoFormWrapperSt = styled.div<{ errorMessage?: string }>`
   display: flex;
-  align-items: flex-end;
+  align-items: ${({ errorMessage }) => (errorMessage ? "center" : "flex-end")};
   gap: 0.5rem;
 `;
 
@@ -44,7 +44,7 @@ export const AddTodoForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <AddTodoFormWrapperSt>
+      <AddTodoFormWrapperSt errorMessage={errorMessage}>
         <UITextField
           name="title"
           placeholder="Todo title"

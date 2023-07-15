@@ -1,7 +1,8 @@
 import { InputHTMLAttributes } from "react";
+import styled from "styled-components";
 import { UIInput } from "./fields/ui-input";
 import { UILabel } from "./fields/ui-label";
-import styled from "styled-components";
+import { UIMessage } from "./fields/ui-message";
 
 const UITextFieldSt = styled.div`
   width: 100%;
@@ -26,6 +27,7 @@ export const UITextField = ({
     <UITextFieldSt>
       <UILabel label={label} isRequired={inputProps.required} />
       <UIInput {...inputProps} />
+      <UIMessage helpMessage={helpMessage} errorMessage={errorMessage} />
     </UITextFieldSt>
   );
 };
