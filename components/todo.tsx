@@ -5,7 +5,6 @@ import { toggleTheme } from "@/store/slices/theme-slice";
 import { deleteTodo, toggleCompletedTodo } from "@/store/slices/todos-slice";
 import { UIButton, UISelectGroup } from "@/ui";
 import { UISelectOptionModel } from "@/ui/types";
-import { useState } from "react";
 import styled from "styled-components";
 import { AddTodoForm } from "./add-todo-form";
 import { TodoItem } from "./todo-item";
