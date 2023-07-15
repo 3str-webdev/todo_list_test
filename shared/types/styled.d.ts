@@ -10,6 +10,7 @@ declare module "styled-components" {
         400: CSSProperties["color"];
       };
       danger: {
+        400: CSSProperties["color"];
         500: CSSProperties["color"];
       };
       background: CSSProperties["color"];

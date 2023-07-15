@@ -13,6 +13,7 @@ export const themes: IThemeMap = {
         500: "#3b82f6",
       },
       danger: {
+        400: "#f87171",
         500: "#ef4444",
       },
       background: "#f1f5f9",
@@ -27,6 +28,7 @@ export const themes: IThemeMap = {
         500: "#3b82f6",
       },
       danger: {
+        400: "#f87171",
         500: "#ef4444",
       },
       background: "#0f172a",

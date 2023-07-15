@@ -96,7 +96,10 @@ export const Todo = () => {
                       >
                         {getItemToggleCompleteButtonText(todo.isCompleted)}
                       </UIButton>
-                      <UIButton onClick={() => handleDeleteTodoClick(todo.id)}>
+                      <UIButton
+                        variant="danger"
+                        onClick={() => handleDeleteTodoClick(todo.id)}
+                      >
                         Delete
                       </UIButton>
                     </>
