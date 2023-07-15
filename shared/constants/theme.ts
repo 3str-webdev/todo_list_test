@@ -8,8 +8,13 @@ export interface IThemeMap {
 export const themes: IThemeMap = {
   light: {
     colors: {
-      primary: "#3b82f6",
-      secondary: "#0d9488",
+      primary: {
+        400: "#60a5fa",
+        500: "#3b82f6",
+      },
+      danger: {
+        500: "#ef4444",
+      },
       background: "#f1f5f9",
       text: "#0f172a",
     },
@@ -17,8 +22,13 @@ export const themes: IThemeMap = {
 
   dark: {
     colors: {
-      primary: "#3b82f6",
-      secondary: "#0d9488",
+      primary: {
+        400: "#60a5fa",
+        500: "#3b82f6",
+      },
+      danger: {
+        500: "#ef4444",
+      },
       background: "#0f172a",
       text: "#f1f5f9",
     },

@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const UIMessageSt = styled.p<UIMessageProps>`
   font-size: 0.8rem;
-  color: ${({ errorMessage }) => (errorMessage ? "red" : "inherit")};
+  color: ${({ errorMessage, theme }) =>
+    errorMessage ? theme.colors.danger[500] : "inherit"};
 `;
 
 interface UIMessageProps {

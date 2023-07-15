@@ -5,7 +5,7 @@ const UILabelSt = styled.label<Pick<UILabelProps, "isRequired">>`
 
   &:after {
     content: "*";
-    color: red;
+    color: ${({ theme }) => theme.colors.danger[500]};
     margin-left: 0.3rem;
     visibility: ${({ isRequired }) => (isRequired ? "visible" : "hidden")};
   }

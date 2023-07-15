@@ -5,8 +5,13 @@ import "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
-      primary: CSSProperties["color"];
-      secondary: CSSProperties["color"];
+      primary: {
+        500: CSSProperties["color"];
+        400: CSSProperties["color"];
+      };
+      danger: {
+        500: CSSProperties["color"];
+      };
       background: CSSProperties["color"];
       text: CSSProperties["color"];
     };
