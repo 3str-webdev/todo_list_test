@@ -12,8 +12,8 @@ const baseTheme: DefaultTheme = {
       500: "#3b82f6",
     },
     danger: {
-      400: "#f87171",
-      500: "#ef4444",
+      400: "#fb7185",
+      500: "#f43f5e",
     },
     background: "#0f172a",
     text: "#f1f5f9",
