@@ -4,12 +4,12 @@ import { getRandomNumber } from "@/lib";
 import { useAppDispatch } from "@/shared/hooks/redux-hooks";
 import { addTodo } from "@/store/slices/todos-slice";
 import { UIButton, UITextField } from "@/ui";
-import { customAlphabet } from "nanoid";
 import { FormEvent, useState } from "react";
 import styled from "styled-components";
 
 const AddTodoFormWrapperSt = styled.div`
   display: flex;
+  align-items: flex-end;
   gap: 0.5rem;
 `;
 
