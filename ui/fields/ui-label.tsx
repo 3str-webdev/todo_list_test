@@ -17,5 +17,6 @@ interface UILabelProps {
 }
 
 export const UILabel = ({ label, isRequired }: UILabelProps) => {
+  if (!label) return null;
   return <UILabelSt isRequired={isRequired}>{label}</UILabelSt>;
 };
