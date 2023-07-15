@@ -7,21 +7,34 @@ const TodoLayoutSt = styled.section`
   gap: 1rem;
 `;
 
+const ActionsSt = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+`;
+
 interface TodoLayoutProps {
   addTodoField: ReactNode;
-  actions: ReactNode;
+  filters: ReactNode;
+  toggleTheme: ReactNode;
   itemsList: ReactNode;
 }
 
 export const TodoLayout = ({
   addTodoField,
-  actions,
+  filters,
+  toggleTheme,
   itemsList,
 }: TodoLayoutProps) => {
   return (
     <TodoLayoutSt>
       {addTodoField}
-      {actions}
+      <ActionsSt>
+        {filters}
+        {toggleTheme}
+      </ActionsSt>
       <hr />
       {itemsList}
     </TodoLayoutSt>

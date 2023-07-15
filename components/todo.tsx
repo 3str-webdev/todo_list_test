@@ -65,16 +65,16 @@ export const Todo = () => {
   return (
     <TodoLayout
       addTodoField={<AddTodoForm />}
-      actions={
-        <>
-          <UISelectGroup
-            options={getFilterOptions()}
-            onChange={handleChangeFilter}
-          />
-          <UIButton onClick={handleToggleThemeClick}>
-            {getThemeButtonContent()}
-          </UIButton>
-        </>
+      filters={
+        <UISelectGroup
+          options={getFilterOptions()}
+          onChange={handleChangeFilter}
+        />
+      }
+      toggleTheme={
+        <UIButton onClick={handleToggleThemeClick}>
+          {getThemeButtonContent()}
+        </UIButton>
       }
       itemsList={
         <TodoListSt>
