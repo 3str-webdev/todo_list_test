@@ -28,7 +28,7 @@ export const AddTodoForm = () => {
     const title = target.title.value;
 
     if (!title) {
-      setErrorMessage("Incorrect value");
+      setErrorMessage("Todo title can't be empty");
       return;
     }
 
