@@ -1,15 +1,13 @@
-import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux-hooks";
+import { useAppDispatch } from "@/shared/hooks/redux-hooks";
 import { FilterFunctions, useFilterTodos } from "@/shared/hooks/use-filter";
 import { TodoModel } from "@/shared/types";
-import { toggleTheme } from "@/store/slices/theme-slice";
 import { deleteTodo, toggleCompletedTodo } from "@/store/slices/todos-slice";
-import { UIButton, UIIconButton, UISelectGroup } from "@/ui";
+import { UIButton, UISelectGroup } from "@/ui";
 import { UISelectOptionModel } from "@/ui/types";
 import styled from "styled-components";
 import { AddTodoForm } from "./add-todo-form";
 import { TodoItem } from "./todo-item";
 import { TodoLayout } from "./todo-layout";
-import { MoonIcon, SunIcon } from "@/ui/icons";
 
 const TodoListSt = styled.ul`
   display: flex;
