@@ -12,6 +12,12 @@ const TodoListSt = styled.ul`
   list-style: none;
 `;
 
+const TodosNotFoundNoticeSt = styled.p`
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+`;
+
 interface TodoItemsListProps {
   todos: TodoModel[];
 }
@@ -32,6 +38,10 @@ export const TodoItemsList = ({ todos }: TodoItemsListProps) => {
   const handleDeleteTodoClick = (id: TodoModel["id"]) => {
     dispatch(deleteTodo(id));
   };
+
+  if (!todos.length) {
+    return <TodosNotFoundNoticeSt>Todos list is empty</TodosNotFoundNoticeSt>;
+  }
 
   return (
     <TodoListSt>
