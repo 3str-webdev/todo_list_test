@@ -1,38 +1,12 @@
-import { useAppDispatch } from "@/shared/hooks/redux-hooks";
 import { FilterFunctions, useFilterTodos } from "@/shared/hooks/use-filter";
-import { TodoModel } from "@/shared/types";
-import { deleteTodo, toggleCompletedTodo } from "@/store/slices/todos-slice";
-import { UIButton, UISelectGroup } from "@/ui";
+import { UISelectGroup } from "@/ui";
 import { UISelectOptionModel } from "@/ui/types";
-import styled from "styled-components";
 import { AddTodoForm } from "./add-todo-form";
-import { TodoItem } from "./todo-item";
+import { TodoItemsList } from "./todo-items-list";
 import { TodoLayout } from "./todo-layout";
 
-const TodoListSt = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  list-style: none;
-`;
-
 export const Todo = () => {
-  const dispatch = useAppDispatch();
   const { filteredTodos, changeIsShowTodoFunction } = useFilterTodos();
-
-  const getItemSubtitle = (isCompleted: boolean) => {
-    return isCompleted ? "completed" : undefined;
-  };
-  const getItemToggleCompleteButtonText = (isCompleted: boolean) => {
-    return isCompleted ? "Uncompleted" : "Completed";
-  };
-
-  const handleToggleCompletedClick = (id: TodoModel["id"]) => {
-    dispatch(toggleCompletedTodo(id));
-  };
-  const handleDeleteTodoClick = (id: TodoModel["id"]) => {
-    dispatch(deleteTodo(id));
-  };
 
   const getFilterOptions = (): UISelectOptionModel[] => {
     return [
@@ -63,36 +37,7 @@ export const Todo = () => {
           onChange={handleChangeFilter}
         />
       }
-      itemsList={
-        <TodoListSt>
-          {filteredTodos.map((todo) => {
-            return (
-              <li key={todo.id}>
-                <TodoItem
-                  title={todo.title}
-                  subtitle={getItemSubtitle(todo.isCompleted)}
-                  isCompleted={todo.isCompleted}
-                  actions={
-                    <>
-                      <UIButton
-                        onClick={() => handleToggleCompletedClick(todo.id)}
-                      >
-                        {getItemToggleCompleteButtonText(todo.isCompleted)}
-                      </UIButton>
-                      <UIButton
-                        variant="danger"
-                        onClick={() => handleDeleteTodoClick(todo.id)}
-                      >
-                        Delete
-                      </UIButton>
-                    </>
-                  }
-                />
-              </li>
-            );
-          })}
-        </TodoListSt>
-      }
+      itemsList={<TodoItemsList todos={filteredTodos} />}
     />
   );
 };
