@@ -7,7 +7,7 @@ export const useSortTodos = () => {
 
   if (todos.length < 2) return todos;
 
-  const sortedTodos = todos.toSorted((a, b) => b.priority - a.priority);
+  const sortedTodos = [...todos].sort((a, b) => b.priority - a.priority);
 
   return sortedTodos;
 };
