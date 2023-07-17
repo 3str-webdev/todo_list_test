@@ -15,7 +15,6 @@ const convertOptionsToSelectOptions = (options: UISelectOptionModel[]) => {
 const UISelectOptionsListSt = styled.ul`
   display: flex;
   list-style: none;
-  /* gap: 2px; */
 
   & li:first-child button {
     border-top-left-radius: 10rem;
