@@ -1,13 +1,14 @@
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux-hooks";
 import { toggleTheme } from "@/store/slices/theme-slice";
-import { UIIconButton } from "@/ui";
+import { UIButton } from "@/ui";
 import { MoonIcon, SunIcon } from "@/ui/icons";
 import styled from "styled-components";
 
-const ThemeToggleSt = styled(UIIconButton)`
+const ThemeToggleSt = styled(UIButton)`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.3rem;
+  right: 0.3rem;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const ThemeToggle = () => {
@@ -26,7 +27,7 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <ThemeToggleSt onClick={handleToggleThemeClick}>
+    <ThemeToggleSt variant="clean" onClick={handleToggleThemeClick}>
       {getThemeButtonContent()}
     </ThemeToggleSt>
   );

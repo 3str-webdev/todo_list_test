@@ -1,9 +1,16 @@
 import { classes } from "@/lib";
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import styled from "styled-components";
 
-const ButtonSt = styled.button`
-  padding: 0.7rem 1rem;
+const ButtonSt = styled.button<UIButtonProps & { $isIconOnly: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: ${({ $isIconOnly }) => ($isIconOnly ? "0.7rem" : "1rem")};
+  padding-right: ${({ $isIconOnly }) => ($isIconOnly ? "0.7rem" : "1rem")};
   border-radius: 0.3rem;
   font-size: 0.8rem;
   color: ${({ theme }) => theme.colors.background};
@@ -24,25 +31,40 @@ const ButtonSt = styled.button`
   &.danger:hover {
     background: ${({ theme }) => theme.colors.danger[400]};
   }
+  &.clean {
+    background: transparent;
+  }
 `;
 
 interface UIButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "danger";
+  variant?: "primary" | "danger" | "clean";
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
 }
 
 export const UIButton = ({
   children,
   variant = "primary",
+  leftIcon,
+  rightIcon,
   className,
   ...props
 }: UIButtonProps) => {
-  const variantClassName = {
-    primary: "primary",
-    danger: "danger",
-  }[variant];
+  const isIconOnly = !children;
+
+  const buttonClassName = classes(
+    className,
+    {
+      primary: "primary",
+      danger: "danger",
+      clean: "clean",
+    }[variant]
+  );
   return (
-    <ButtonSt className={classes(className, variantClassName)} {...props}>
+    <ButtonSt className={buttonClassName} $isIconOnly={isIconOnly} {...props}>
+      {leftIcon}
       {children}
+      {rightIcon}
     </ButtonSt>
   );
 };

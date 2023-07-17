@@ -4,6 +4,7 @@ import { deleteTodo, toggleCompletedTodo } from "@/store/slices/todos-slice";
 import { UIButton } from "@/ui";
 import styled from "styled-components";
 import { TodoItem } from "./todo-item";
+import { TrashIcon } from "@/ui/icons";
 
 const TodoListSt = styled.ul`
   display: flex;
@@ -59,10 +60,9 @@ export const TodoItemsList = ({ todos }: TodoItemsListProps) => {
                   </UIButton>
                   <UIButton
                     variant="danger"
+                    leftIcon={<TrashIcon width={15} height={15} />}
                     onClick={() => handleDeleteTodoClick(todo.id)}
-                  >
-                    Delete
-                  </UIButton>
+                  ></UIButton>
                 </>
               }
             />
