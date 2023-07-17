@@ -1,4 +1,4 @@
-import { FilterFunctions, useFilterTodos } from "@/shared/hooks/use-filter";
+import { FilterFunctions, useFilterTodos } from "@/shared/hooks/use-filter-todos";
 import { UISelectGroup } from "@/ui";
 import { UISelectOptionModel } from "@/ui/types";
 import { AddTodoForm } from "./add-todo-form";

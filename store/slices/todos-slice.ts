@@ -12,16 +12,16 @@ const initialState: { todos: TodoModel[] } = {
       priority: TodoPriority.HIGH,
     },
     {
-      id: 3,
-      title: "SomeTodoTodoSomeTodoSomeTodo",
-      isCompleted: false,
-      priority: TodoPriority.MEDIUM,
-    },
-    {
       id: 2,
       title: "SomeTodoTodoSomeTodoSomeTodo",
       isCompleted: false,
       priority: TodoPriority.LOW,
+    },
+    {
+      id: 3,
+      title: "SomeTodoTodoSomeTodoSomeTodo",
+      isCompleted: false,
+      priority: TodoPriority.MEDIUM,
     },
   ],
 };
@@ -47,7 +47,6 @@ const todosSlice = createSlice({
       });
     },
   },
-  
 });
 
 export const { addTodo, deleteTodo, toggleCompletedTodo } = todosSlice.actions;
