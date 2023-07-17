@@ -14,8 +14,26 @@ const convertOptionsToSelectOptions = (options: UISelectOptionModel[]) => {
 
 const UISelectOptionsListSt = styled.ul`
   display: flex;
-  gap: 0.3rem;
   list-style: none;
+  /* gap: 2px; */
+
+  & li:first-child button {
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+  }
+
+  & li:last-child button {
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+  }
+
+  & li button {
+    border-right: 1px solid ${({ theme }) => theme.colors.background};
+  }
+
+  & li:last-child button {
+    border-right: none;
+  }
 `;
 
 interface UISelectProps {
@@ -58,14 +76,13 @@ export function UISelect({ options, onChange }: UISelectProps) {
   );
 }
 
-const UISelectOptionSt = styled.button<UISelectOptionProps>`
+const UISelectOptionSt = styled.button<{ $isSelected: boolean }>`
   padding: 0.5rem 1rem;
   background: ${({ theme }) => theme.colors.text};
   color: ${({ theme }) => theme.colors.background};
-  opacity: ${({ isSelected }) => (isSelected ? 1 : 0.7)};
+  opacity: ${({ $isSelected }) => ($isSelected ? 1 : 0.7)};
   outline: none;
   border: none;
-  border-radius: 10rem;
   cursor: pointer;
 `;
 
@@ -81,7 +98,7 @@ UISelect.Option = function UISelectOption({
 }: UISelectOptionProps) {
   return (
     <li>
-      <UISelectOptionSt option={option} isSelected={isSelected} {...props}>
+      <UISelectOptionSt $isSelected={isSelected} {...props}>
         {option.label}
       </UISelectOptionSt>
     </li>
