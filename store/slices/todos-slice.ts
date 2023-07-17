@@ -1,3 +1,4 @@
+import { TodoPriority } from "@/shared/constants";
 import { PayloadAction } from "./../../node_modules/@reduxjs/toolkit/src/createAction";
 import { TodoModel } from "@/shared/types";
 import { createSlice } from "@reduxjs/toolkit";
@@ -8,11 +9,19 @@ const initialState: { todos: TodoModel[] } = {
       id: 1,
       title: "SomeTodo",
       isCompleted: true,
+      priority: TodoPriority.HIGH,
+    },
+    {
+      id: 3,
+      title: "SomeTodoTodoSomeTodoSomeTodo",
+      isCompleted: false,
+      priority: TodoPriority.MEDIUM,
     },
     {
       id: 2,
       title: "SomeTodoTodoSomeTodoSomeTodo",
       isCompleted: false,
+      priority: TodoPriority.LOW,
     },
   ],
 };
@@ -38,6 +47,7 @@ const todosSlice = createSlice({
       });
     },
   },
+  
 });
 
 export const { addTodo, deleteTodo, toggleCompletedTodo } = todosSlice.actions;

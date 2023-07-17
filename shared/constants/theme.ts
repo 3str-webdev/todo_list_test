@@ -1,4 +1,5 @@
 import { DefaultTheme } from "styled-components";
+import { TodoPriority } from "./todo-priority";
 
 export interface IThemeMap {
   light: DefaultTheme;
@@ -14,6 +15,11 @@ const baseTheme: DefaultTheme = {
     danger: {
       400: "#fb7185",
       500: "#f43f5e",
+    },
+    todoPriority: {
+      [TodoPriority.HIGH]: "#f87171",
+      [TodoPriority.MEDIUM]: "#f59e0b",
+      [TodoPriority.LOW]: "#10b981",
     },
     background: "#0f172a",
     text: "#f1f5f9",

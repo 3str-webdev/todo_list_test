@@ -53,6 +53,7 @@ export const TodoItemsList = ({ todos }: TodoItemsListProps) => {
               title={todo.title}
               subtitle={getItemSubtitle(todo.isCompleted)}
               isCompleted={todo.isCompleted}
+              priority={todo.priority}
               actions={
                 <>
                   <UIButton onClick={() => handleToggleCompletedClick(todo.id)}>

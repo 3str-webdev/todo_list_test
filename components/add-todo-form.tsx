@@ -1,6 +1,7 @@
 "use client";
 
 import { getRandomNumber } from "@/lib";
+import { TodoPriority } from "@/shared/constants";
 import { useAppDispatch } from "@/shared/hooks/redux-hooks";
 import { addTodo } from "@/store/slices/todos-slice";
 import { UIButton, UITextField } from "@/ui";
@@ -37,6 +38,7 @@ export const AddTodoForm = () => {
         id: getRandomNumber(10),
         title,
         isCompleted: false,
+        priority: TodoPriority.LOW,
       })
     );
     setErrorMessage(undefined);
