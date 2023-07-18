@@ -2,8 +2,8 @@ import {
   FilterFunctions,
   useFilterTodos,
 } from "@/shared/hooks/use-filter-todos";
-import { UISelectGroup } from "@/ui";
-import { UISelectOptionModel } from "@/ui/types";
+import { UIButtonsGroup } from "@/ui";
+import { UIButtonsGroupOptionModel } from "@/ui/types";
 import { AddTodoForm } from "./add-todo-form";
 import { TodoItemsList } from "./todo-items-list";
 import { TodoLayout } from "./todo-layout";
@@ -11,7 +11,7 @@ import { TodoLayout } from "./todo-layout";
 export const Todo = () => {
   const { filteredTodos, changeIsShowTodoFunction } = useFilterTodos();
 
-  const getFilterOptions = (): UISelectOptionModel[] => {
+  const getFilterOptions = (): UIButtonsGroupOptionModel[] => {
     return [
       {
         label: "all",
@@ -27,7 +27,7 @@ export const Todo = () => {
       },
     ];
   };
-  const handleChangeFilter = (option: UISelectOptionModel) => {
+  const handleChangeFilter = (option: UIButtonsGroupOptionModel) => {
     changeIsShowTodoFunction(option.value as keyof FilterFunctions);
   };
 
@@ -35,7 +35,7 @@ export const Todo = () => {
     <TodoLayout
       addTodoField={<AddTodoForm />}
       filters={
-        <UISelectGroup
+        <UIButtonsGroup
           options={getFilterOptions()}
           onChange={handleChangeFilter}
         />

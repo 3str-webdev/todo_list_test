@@ -1,4 +1,4 @@
-export interface UISelectOptionModel {
+export interface UIButtonsGroupOptionModel {
   label: string;
   value: any;
 }
