@@ -1,12 +1,21 @@
-import { FilterFunctions, useFilterTodos } from "@/shared/hooks/use-filter-todos";
+import {
+  FilterFunctions,
+  useFilterTodos,
+} from "@/shared/hooks/use-filter-todos";
 import { UISelectGroup } from "@/ui";
 import { UISelectOptionModel } from "@/ui/types";
+import { useEffect, useState } from "react";
 import { AddTodoForm } from "./add-todo-form";
 import { TodoItemsList } from "./todo-items-list";
 import { TodoLayout } from "./todo-layout";
 
 export const Todo = () => {
   const { filteredTodos, changeIsShowTodoFunction } = useFilterTodos();
+  const [o, setO] = useState(false);
+
+  useEffect(() => {
+    setO(true);
+  }, []);
 
   const getFilterOptions = (): UISelectOptionModel[] => {
     return [

@@ -22,7 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <Provider store={store}>
-          <CustomThemeProvider>{children}</CustomThemeProvider>
+          <CustomThemeProvider>
+            {children}
+            <div id="modal"></div>
+          </CustomThemeProvider>
         </Provider>
       </body>
     </html>
