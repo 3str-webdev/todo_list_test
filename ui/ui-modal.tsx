@@ -97,9 +97,7 @@ UIModal.Body = function UIModalBody({ children, ...props }: UIModalBodyProps) {
 
 const UIModalFooterSt = styled.div`
   margin-top: auto;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-  padding-bottom: 1.2rem;
+  padding: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
