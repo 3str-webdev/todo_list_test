@@ -9,8 +9,8 @@ export interface IThemeMap {
 const baseTheme: DefaultTheme = {
   colors: {
     primary: {
-      400: "#60a5fa",
-      500: "#3b82f6",
+      400: "#818cf8",
+      500: "#6366f1",
     },
     danger: {
       400: "#fb7185",
