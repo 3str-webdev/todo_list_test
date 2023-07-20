@@ -19,6 +19,11 @@ const ButtonSt = styled.button<UIButtonProps & { $isIconOnly: boolean }>`
   cursor: pointer;
   transition: all 0.2s;
 
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
   &.primary {
     background: ${({ theme }) => theme.colors.primary[500]};
   }
