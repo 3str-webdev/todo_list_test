@@ -24,6 +24,7 @@ export const AddTodoForm = () => {
     handleSubmit,
     control,
     formState: { errors, isValid },
+    reset,
   } = useForm<AddTodoFormModel>({
     defaultValues: {
       title: "",
@@ -46,6 +47,7 @@ export const AddTodoForm = () => {
     );
 
     closeModal();
+    reset();
   };
 
   const handleAddTodoClick = () => {
