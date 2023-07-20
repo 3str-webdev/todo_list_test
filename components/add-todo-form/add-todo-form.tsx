@@ -10,35 +10,29 @@ import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
 import { AddTodoFormModel } from "./types/form-model";
 
-const AddTodoFormWrapperSt = styled.div<{ errorMessage?: string }>`
+const AddTodoFormWrapperSt = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
 
-interface AddTodoFormTarget extends EventTarget {
-  title: { value: string };
-}
-
 export const AddTodoForm = () => {
   const [isShowForm, setIsShowForm] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string>();
   const dispatch = useAppDispatch();
 
   const {
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<AddTodoFormModel>({
     defaultValues: {
       title: "",
       priority: TodoPriority.LOW,
     },
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   const closeModal = () => {
-    setErrorMessage(undefined);
     setIsShowForm(false);
   };
 
@@ -84,10 +78,13 @@ export const AddTodoForm = () => {
         <UIModal.Header>Add todo form</UIModal.Header>
         <UIModal.Body>
           <form id="add-todo-form" onSubmit={handleSubmit(onSubmit)}>
-            <AddTodoFormWrapperSt errorMessage={errorMessage}>
+            <AddTodoFormWrapperSt>
               <Controller
                 name="title"
                 control={control}
+                rules={{
+                  required: "Todo title can't be empty",
+                }}
                 render={({ field: { onChange } }) => (
                   <UITextField
                     name="title"
@@ -95,7 +92,7 @@ export const AddTodoForm = () => {
                     label="Todo title"
                     onChange={onChange}
                     required
-                    errorMessage={errorMessage}
+                    errorMessage={errors.title?.message}
                   />
                 )}
               />
@@ -115,7 +112,7 @@ export const AddTodoForm = () => {
           </form>
         </UIModal.Body>
         <UIModal.Footer>
-          <UIButton type="submit" form="add-todo-form">
+          <UIButton type="submit" form="add-todo-form" disabled={!isValid}>
             Add
           </UIButton>
         </UIModal.Footer>
