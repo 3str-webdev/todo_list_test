@@ -4,7 +4,7 @@ import {
 } from "@/shared/hooks/use-filter-todos";
 import { UIButtonsGroup } from "@/ui";
 import { UIButtonsGroupOptionModel } from "@/ui/types";
-import { AddTodoForm } from "./add-todo-form";
+import { AddTodoForm } from "./add-todo-form/add-todo-form";
 import { TodoItemsList } from "./todo-items-list";
 import { TodoLayout } from "./todo-layout";
 
