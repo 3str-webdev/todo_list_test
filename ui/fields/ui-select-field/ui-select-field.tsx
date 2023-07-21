@@ -113,4 +113,5 @@ const UISelectOptionsList = styled.ul<{ $isOpen: boolean }>`
   background-color: ${({ theme }) => theme.colors.background};
   border: 2px solid ${({ theme }) => theme.colors.primary[500]};
   border-radius: 0.5rem;
+  z-index: 1;
 `;
