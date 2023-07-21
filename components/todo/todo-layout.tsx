@@ -16,18 +16,21 @@ const ActionsSt = styled.div`
 `;
 
 interface TodoLayoutProps {
+  search: ReactNode;
   addTodoButton: ReactNode;
   filters: ReactNode;
   itemsList: ReactNode;
 }
 
 export const TodoLayout = ({
+  search,
   addTodoButton,
   filters,
   itemsList,
 }: TodoLayoutProps) => {
   return (
     <TodoLayoutSt>
+      {search}
       <ActionsSt>
         {addTodoButton}
         {filters}
