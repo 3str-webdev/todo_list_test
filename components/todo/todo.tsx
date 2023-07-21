@@ -1,3 +1,4 @@
+import { debounce } from "@/lib";
 import {
   FilterFunctions,
   useFilterTodos,
@@ -17,9 +18,9 @@ export const Todo = () => {
   const handleChangeFilter = (option: UIButtonsGroupOptionModel) => {
     changeIsShowTodoFunction(option.value as keyof FilterFunctions);
   };
-  const handleChangeSearch = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeSearch = debounce((e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
-  };
+  }, 200);
 
   return (
     <TodoLayout
