@@ -14,7 +14,7 @@ const OptionSt = styled.button<{ $isSelected: boolean }>`
   cursor: pointer;
   font-size: 0.85rem;
 
-  &:hover {
+  &:hover, &:focus {
     background: ${({ theme }) => theme.colors.primary[500]}50;
   }
 `;
