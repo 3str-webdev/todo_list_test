@@ -10,6 +10,7 @@ import { AddTodoForm } from "../add-todo-form/add-todo-form";
 import { filterOptions } from "./constants/filter-options";
 import { TodoItemsList } from "./todo-items-list";
 import { TodoLayout } from "./todo-layout";
+import { SearchIcon } from "@/ui/icons";
 
 export const Todo = () => {
   const [search, setSearch] = useState<string>("");
@@ -27,6 +28,7 @@ export const Todo = () => {
       search={
         <UITextField
           placeholder="Search by todo title"
+          leftAddon={<SearchIcon width={17} height={17} />}
           onChange={handleChangeSearch}
         />
       }
