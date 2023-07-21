@@ -33,7 +33,7 @@ export const Todo = () => {
 
   return (
     <TodoLayout
-      addTodoField={<AddTodoForm />}
+      addTodoButton={<AddTodoForm />}
       filters={
         <UIButtonsGroup
           options={getFilterOptions()}
