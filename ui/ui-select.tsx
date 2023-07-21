@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { UILabel } from "./fields/ui-label";
 import { UIMessage } from "./fields/ui-message";
-import { UISelectField } from "./fields/ui-select-field/ui-select-field";
+import { UISelectField } from "./fields/ui-select-field";
 import { UISelectOptionModel } from "./types";
 
 const UISelectSt = styled.div`
