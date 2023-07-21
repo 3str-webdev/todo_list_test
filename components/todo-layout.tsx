@@ -28,8 +28,10 @@ export const TodoLayout = ({
 }: TodoLayoutProps) => {
   return (
     <TodoLayoutSt>
-      {addTodoField}
-      {filters}
+      <ActionsSt>
+        {addTodoField}
+        {filters}
+      </ActionsSt>
       <hr />
       {itemsList}
     </TodoLayoutSt>
