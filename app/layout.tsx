@@ -1,5 +1,3 @@
-"use client";
-
 import { CustomThemeProvider } from "@/shared/providers/custom-theme-provider";
 import { store } from "@/store";
 import type { Metadata } from "next";
