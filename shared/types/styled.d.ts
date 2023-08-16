@@ -1,7 +1,9 @@
-// import original module declarations
+import { TodoPriority } from "@/shared/types";
+import { CSSProperties } from "react";
+import { TodoPriority } from "../constants";
+
 import "styled-components";
 
-// and extend them!
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
@@ -13,6 +15,7 @@ declare module "styled-components" {
         400: CSSProperties["color"];
         500: CSSProperties["color"];
       };
+      todoPriority: Record<TodoPriority, CSSProperties["color"]>;
       background: CSSProperties["color"];
       text: CSSProperties["color"];
     };
