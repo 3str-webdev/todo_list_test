@@ -27,11 +27,12 @@ export const UITextField = ({
   leftAddon,
   ...inputProps
 }: UIInputProps) => {
+  const hasAddon = !!leftAddon;
   return (
     <UITextFieldSt>
       <UILabel label={label} isRequired={inputProps.required} />
       <InputBoxSt>
-        <AddonSt>{leftAddon}</AddonSt>
+        {hasAddon && <AddonSt>{leftAddon}</AddonSt>}
         <UIInput {...inputProps} />
       </InputBoxSt>
       <UIMessage helpMessage={helpMessage} errorMessage={errorMessage} />
