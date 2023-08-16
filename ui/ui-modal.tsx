@@ -1,3 +1,5 @@
+"use client";
+
 import { HTMLAttributes, MouseEvent } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";

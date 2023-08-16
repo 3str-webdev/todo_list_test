@@ -1,3 +1,5 @@
+"use client";
+
 import { debounce } from "@/lib";
 import {
   FilterFunctions,

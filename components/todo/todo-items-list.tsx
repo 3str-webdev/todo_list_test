@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppDispatch } from "@/shared/hooks/redux-hooks";
 import { TodoModel } from "@/shared/types";
 import { deleteTodo, toggleCompletedTodo } from "@/store/slices/todos-slice";

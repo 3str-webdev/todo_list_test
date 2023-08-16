@@ -1,3 +1,5 @@
+"use client";
+
 import { UIButtonsSelect } from "./fields/ui-buttons-select";
 import { UIButtonsGroupOptionModel } from "./types";
 

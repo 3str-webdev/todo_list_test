@@ -1,3 +1,5 @@
+"use client";
+
 import { UISelectOptionModel } from "@/ui/types";
 import { ButtonHTMLAttributes, MouseEvent } from "react";
 import styled from "styled-components";
@@ -14,7 +16,8 @@ const OptionSt = styled.button<{ $isSelected: boolean }>`
   cursor: pointer;
   font-size: 0.85rem;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: ${({ theme }) => theme.colors.primary[500]}50;
   }
 `;

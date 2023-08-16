@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "styled-components";
 import { UILabel } from "./fields/ui-label";
 import { UIMessage } from "./fields/ui-message";

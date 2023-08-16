@@ -1,3 +1,5 @@
+"use client";
+
 import { TodoPriority } from "@/shared/constants";
 import { ReactNode } from "react";
 import styled from "styled-components";

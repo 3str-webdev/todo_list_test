@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux-hooks";
 import { toggleTheme } from "@/store/slices/theme-slice";
 import { UIButton } from "@/ui";

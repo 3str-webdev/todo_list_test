@@ -1,3 +1,5 @@
+"use client";
+
 import { InputHTMLAttributes, ReactNode } from "react";
 import styled from "styled-components";
 import { UIInput } from "./fields/ui-input";

@@ -1,3 +1,5 @@
+"use client";
+
 import { GlobalStyles } from "@/app/global-styles";
 import { StyledComponentsRegistry } from "@/lib";
 import { ReactNode } from "react";

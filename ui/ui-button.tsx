@@ -1,3 +1,5 @@
+"use client";
+
 import { classes } from "@/lib";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import styled from "styled-components";
