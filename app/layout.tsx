@@ -1,12 +1,5 @@
-"use client";
-
-import { CustomThemeProvider } from "@/shared/providers/custom-theme-provider";
-import { store } from "@/store";
+import { ClientLayout } from "@/components/client-layout";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import { Provider } from "react-redux";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ToDo List App",
@@ -20,13 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <Provider store={store}>
-          <CustomThemeProvider>
-            {children}
-            <div id="modal"></div>
-          </CustomThemeProvider>
-        </Provider>
+      <body>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
