@@ -18,12 +18,5 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Montserrat, a custom Google Font.
 
-## Реализовано
-- Добавление задачи
-- Удаление задачи
-- Сортировка по статусу выполнения
-- Выполнение задачи
-- Смена цветовой темы
-
-## Внимание
-На данный момент (15.07.2023 02:32) реализована вся бизнес-логика. Все последующие коммиты напрвлены на улучшения UI/UX.
+## develop branch
+В этой ветке я буду разрабатывать фичи и рефакторить имеющийся код после установленного дедлайна. Справедливо, если код из этой ветки не будет учитываться при оценке тестового задания.

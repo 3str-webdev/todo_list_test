@@ -7,6 +7,12 @@ const InputSt = styled.input<UIInputProps>`
   border: none;
   outline: none;
   border-radius: 0.3rem;
+
+  &:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: ${({ theme }) => theme.colors.primary[400]};
+  }
 `;
 
 type UIInputProps = InputHTMLAttributes<HTMLInputElement>;

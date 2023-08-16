@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { TodoModel } from "../types";
-import { useAppSelector } from "./redux-hooks";
+import { useSortTodos } from "./use-sort-todos";
 
 const showCompletedTodos = (todo: TodoModel): boolean => {
   return todo.isCompleted;
@@ -18,16 +18,15 @@ export interface FilterFunctions {
   uncompleted: (todo: TodoModel) => boolean;
 }
 
-export const useFilterTodos = () => {
-  const todos = useAppSelector((store) => store.todosReducer.todos);
-  const [filteredTodos, setFilteredTodos] = useState<TodoModel[]>(() => todos);
+export const useFilterTodos = (search: string) => {
+  const sortedTodos = useSortTodos();
   const [isShowTodo, setIsShowTodo] = useState<(todo: TodoModel) => boolean>(
     () => showAllTodos
   );
 
-  useEffect(() => {
-    setFilteredTodos(todos.filter(isShowTodo));
-  }, [todos, isShowTodo]);
+  const filteredTodos = sortedTodos
+    .filter(isShowTodo)
+    .filter((todo) => todo.title.toLowerCase().includes(search.toLowerCase()));
 
   const filterFunctions: FilterFunctions = {
     all: showAllTodos,
